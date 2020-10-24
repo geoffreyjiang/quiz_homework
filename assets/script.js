@@ -9,8 +9,6 @@ var optionD = document.querySelector("#optionD");
 var startBtn = document.querySelector("#startBtn");
 var startQ = document.querySelector("#startQuiz");
 var takeQ = document.querySelector("#takeQuiz");
-var score = document.getElementById("score");
-
 var scoreCount = 0;
 var scoreEl = document.querySelector("#score")
 
@@ -114,9 +112,10 @@ optionA.addEventListener("click", function () {
         scoring()
         askQuestions();
 }    else {
-    alert("Wrong!");
-    timerCount -= 10;
-    askQuestions()
+        questionsPointer++;
+        askQuestions()
+        alert("Wrong!");
+        timerCount -= 10;
 }
 });
 optionB.addEventListener("click", function () {
@@ -126,9 +125,10 @@ optionB.addEventListener("click", function () {
         askQuestions();
         scoring();
 }   else {
+        questionsPointer++;
+        askQuestions()
         alert("Wrong!");
         timerCount -= 10;
-        askQuestions()
 }
 });
 optionC.addEventListener("click", function () {
@@ -138,6 +138,7 @@ optionC.addEventListener("click", function () {
         askQuestions();
         scoring();
 }   else {
+        questionsPointer++;
         alert("Wrong!");
         askQuestions()
         timerCount -= 10;
@@ -149,7 +150,10 @@ optionD.addEventListener("click", function () {
         askQuestions();
         scoring();
 }   else {
+        questionsPointer++;
         alert("Wrong!");
+        askQuestions()
+        scoring();
         timerCount -= 10;
 }
 });
