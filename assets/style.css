@@ -1,13 +1,38 @@
+
+#container {
+    margin-top: -50%;
+    margin-left: -50%;
+}
+
+#title{
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    font-size: 24px;
+}
+
 #timer{
     float: right;
 }
 
-/* #optionA, #optionC{
-    background-color: purple;
+#questions{
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#optionA, #optionC{
+    font-family: 'Shadows Into Light', cursive;
+    background-color: rgb(153, 10, 153);
     font-weight: bold;
+    background-position: 0%;
+    font-size:  24px;
 }
 
 #optionB, #optionD{
-    background-color: yellow;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: rgb(218, 218, 167);
     font-weight: bold;
-} */
+    font-size: 24px;
+}
+
+,list-group {
+    margin-top: 20%;
+}

@@ -1,4 +1,4 @@
-var timerCount = 40;
+var timerCount = 50;
 var timerEl = document.querySelector("#timer");
 var questionsPointer = 0;
 var question = document.querySelector("#question");
@@ -9,12 +9,19 @@ var optionD = document.querySelector("#optionD");
 var startBtn = document.querySelector("#startBtn");
 var startQ = document.querySelector("#startQuiz");
 var takeQ = document.querySelector("#takeQuiz");
+var score = document.getElementById("score");
 
+var scoreCount = 0;
+var scoreEl = document.querySelector("#score")
 
+scoreEl.textContent = scoreCount;
+function scoring(){
+    scoreCount++;
+    scoreEl.textContent = scoreCount;
+}
 
 timerEl.textContent = timerCount;
-startBtn.addEventListener("click", function () {
-    startBtn.style.visibility = "false";
+startBtn.addEventListener("click", function () {    
     startQ.classList.add("d-none")
     takeQ.classList.remove("d-none")
     prompt("Enter Your Initials")
@@ -40,6 +47,17 @@ var questions = [
         "Chicago Bulls"
     ],
     a: "C"
+},
+{
+    q:
+        "Last NBA team to win 3 championships in a row",
+    choices: [
+        "Los Angeles Clippers",
+        "Boston Celtics",
+        "Chicago Bulls",
+        "Los Angeles Lakers",
+    ],
+    a: "D"
 },
 {
     q: 
@@ -93,11 +111,12 @@ optionA.addEventListener("click", function () {
     if (optionA.getAttribute("data-answer") === questions[questionsPointer].a) {
         alert("Correct!");
         questionsPointer++;
+        scoring()
         askQuestions();
-        score++;
 }    else {
     alert("Wrong!");
     timerCount -= 10;
+    askQuestions()
 }
 });
 optionB.addEventListener("click", function () {
@@ -105,10 +124,11 @@ optionB.addEventListener("click", function () {
         alert("Correct!");
         questionsPointer++;
         askQuestions();
-        score++;
+        scoring();
 }   else {
         alert("Wrong!");
         timerCount -= 10;
+        askQuestions()
 }
 });
 optionC.addEventListener("click", function () {
@@ -116,8 +136,10 @@ optionC.addEventListener("click", function () {
         alert("Correct!");
         questionsPointer++;
         askQuestions();
+        scoring();
 }   else {
         alert("Wrong!");
+        askQuestions()
         timerCount -= 10;
 }
 optionD.addEventListener("click", function () {
@@ -125,10 +147,10 @@ optionD.addEventListener("click", function () {
         alert("Correct!");
         questionsPointer++;
         askQuestions();
+        scoring();
 }   else {
         alert("Wrong!");
         timerCount -= 10;
 }
 });
 });
-
