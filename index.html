@@ -14,23 +14,27 @@
             <h4 id="highscores"><a href="highscores.html" class="" style="text-decoration: none;">View Highscores</a></h4>
         </div>
         <div class="col-sm-6 text-right d-flex justify-content-end float-right">
-            <h4 id="timer">Time: 120</h4>
+            <h4 id="timer">Time: 40</h4>
         </div>
     </div>
     <div class="container">
         <section id="startQuiz" class="text-center">
             <div class="row">
                 <br>
-                <div id="title" class="col-12">
-                    <h1>Geoffrey Made This Quiz!!!!!!</h1>
+                <div id="title" class="jumbotron col-12">
+                    <h1>Timed NBA Quiz!</h1>
+                    <p>You have 40 seconds to answer questions about the NBA! Good luck!</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-primary rounded-pill" id="startBtn">Start Quiz</button>
+                    <button type="button" class="btn btn-primary rounded-pill" id="startBtn">Let's Roll!</button>
                 </div>
             </div>
         </section>
+
+        
+        <section id="takeQuiz" class= "d-none"> 
         <h1 id="question"></h1>
         <div class="list-group">
             <button id="optionA" data-answer="A"></button>
@@ -38,6 +42,8 @@
             <button id="optionC" data-answer="C"></button>
             <button id="optionD" data-answer="D"></button>
         </div>
+        </section>
     </div>
+    
 <script src="./assets/script.js"></script>
 </body>

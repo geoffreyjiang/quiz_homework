@@ -1,4 +1,4 @@
-var timerCount = 120;
+var timerCount = 40;
 var timerEl = document.querySelector("#timer");
 var questionsPointer = 0;
 var question = document.querySelector("#question");
@@ -7,10 +7,17 @@ var optionB = document.querySelector("#optionB");
 var optionC = document.querySelector("#optionC");
 var optionD = document.querySelector("#optionD");
 var startBtn = document.querySelector("#startBtn");
+var startQ = document.querySelector("#startQuiz");
+var takeQ = document.querySelector("#takeQuiz");
+
+
 
 timerEl.textContent = timerCount;
 startBtn.addEventListener("click", function () {
     startBtn.style.visibility = "false";
+    startQ.classList.add("d-none")
+    takeQ.classList.remove("d-none")
+    prompt("Enter Your Initials")
     var timer = window.setInterval(function () {
     timerCount--;
     timerEl.textContent = timerCount;
@@ -18,6 +25,7 @@ startBtn.addEventListener("click", function () {
     if (timerCount === 0) {
         clearInterval(timer);
     }}, 1000);
+    
     askQuestions();
 });
 
@@ -67,6 +75,7 @@ var questions = [
 }
 ];
 
+
 function askQuestions() {
     if (questionsPointer === questions.length) {
     clearInterval(timer);
@@ -85,6 +94,7 @@ optionA.addEventListener("click", function () {
         alert("Correct!");
         questionsPointer++;
         askQuestions();
+        score++;
 }    else {
     alert("Wrong!");
     timerCount -= 10;
@@ -95,6 +105,7 @@ optionB.addEventListener("click", function () {
         alert("Correct!");
         questionsPointer++;
         askQuestions();
+        score++;
 }   else {
         alert("Wrong!");
         timerCount -= 10;
@@ -120,3 +131,4 @@ optionD.addEventListener("click", function () {
 }
 });
 });
+
