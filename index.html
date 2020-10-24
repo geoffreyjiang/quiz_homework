@@ -1,7 +1,5 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,25 +7,21 @@
     <title>Coding A Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
-
 </head>
-
 <body class="bg-white">
-
     <div class="row p-1 mx-1">
         <div class="col-sm-6 text-left d-flex justify-content-start">
             <h4 id="highscores"><a href="highscores.html" class="" style="text-decoration: none;">View Highscores</a></h4>
         </div>
         <div class="col-sm-6 text-right d-flex justify-content-end float-right">
-            <h4 id="timer">Time: 70</h4>
+            <h4 id="timer">Time: 120</h4>
         </div>
     </div>
     <div class="container">
         <section id="startQuiz" class="text-center">
-
             <div class="row">
                 <br>
-                <div class="col-12">
+                <div id="title" class="col-12">
                     <h1>Geoffrey Made This Quiz!!!!!!</h1>
                 </div>
             </div>
@@ -37,22 +31,13 @@
                 </div>
             </div>
         </section>
+        <h1 id="question"></h1>
+        <div class="list-group">
+            <button id="optionA" data-answer="A"></button>
+            <button id="optionB" data-answer="B"></button>
+            <button id="optionC" data-answer="C"></button>
+            <button id="optionD" data-answer="D"></button>
+        </div>
     </div>
-
-
-
-
-<script src="assets/script.js"></script>
-
+<script src="./assets/script.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
