@@ -11,6 +11,7 @@ var startQ = document.querySelector("#startQuiz");
 var takeQ = document.querySelector("#takeQuiz");
 var scoreCount = 0;
 var scoreEl = document.querySelector("#score")
+var highScore = document.querySelector("#highscores")
 
 scoreEl.textContent = scoreCount;
 function scoring(){
@@ -22,7 +23,6 @@ timerEl.textContent = timerCount;
 startBtn.addEventListener("click", function () {    
     startQ.classList.add("d-none")
     takeQ.classList.remove("d-none")
-    prompt("Enter Your Initials")
     var timer = window.setInterval(function () {
     timerCount--;
     timerEl.textContent = timerCount;
@@ -94,7 +94,9 @@ var questions = [
 
 function askQuestions() {
     if (questionsPointer === questions.length) {
-    clearInterval(timer);
+    clearInterval(timerEl);
+    takeQ.classList.add("d-none")
+    scoreEl.innerHTML = "You got " + scoreCount + " out of " + questions.length + " correct!";    
     alert("You finished!");
     return;
 }
