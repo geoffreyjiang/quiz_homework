@@ -12,7 +12,7 @@ var takeQ = document.querySelector("#takeQuiz");
 var scoreCount = 0;
 var scoreEl = document.querySelector("#score")
 var highScore = document.querySelector("#highscores")
-var initials = parseInt(prompt("What are you initials?"));
+var initials = prompt("What is your name?");
 
 
 scoreEl.textContent = scoreCount;
@@ -98,7 +98,7 @@ function askQuestions() {
     if (questionsPointer === questions.length) {
     clearInterval(timerEl);
     takeQ.classList.add("d-none")
-    scoreEl.innerHTML = initials.value + scoreCount + " out of " + questions.length + " correct!";    
+    scoreEl.innerHTML = initials + " " + "got " + scoreCount + " out of " + questions.length + " correct!";    
     alert("You finished!");
     return;
 }
