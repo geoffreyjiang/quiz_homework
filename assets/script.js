@@ -12,6 +12,8 @@ var takeQ = document.querySelector("#takeQuiz");
 var scoreCount = 0;
 var scoreEl = document.querySelector("#score")
 var highScore = document.querySelector("#highscores")
+var initials = parseInt(prompt("What are you initials?"));
+
 
 scoreEl.textContent = scoreCount;
 function scoring(){
@@ -96,7 +98,7 @@ function askQuestions() {
     if (questionsPointer === questions.length) {
     clearInterval(timerEl);
     takeQ.classList.add("d-none")
-    scoreEl.innerHTML = "You got " + scoreCount + " out of " + questions.length + " correct!";    
+    scoreEl.innerHTML = initials.value + scoreCount + " out of " + questions.length + " correct!";    
     alert("You finished!");
     return;
 }
@@ -160,3 +162,9 @@ optionD.addEventListener("click", function () {
 }
 });
 });
+
+
+// highScore = JSON.parse(localStorage.getItem("highscores")) || [];
+// console.log(highScore)
+
+highscore = JSON.parse(localStorage.getItem("scoreEl"))
